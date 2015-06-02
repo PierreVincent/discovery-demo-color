@@ -1,0 +1,22 @@
+# Mac
+.DS_Store
+
+# IntelliJ
+.idea
+.idea_modules
+*.iml
+*.ipr
+*.iws
+.history
+
+# build
+build
+target
+.gradle
+.gradletasknamecache
+/bin/
+
+#Eclipse
+.classpath
+.project
+.settings

@@ -1,0 +1,38 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile(
+            'io.dropwizard:dropwizard-core:0.8.1',
+            'io.dropwizard:dropwizard-client:0.8.1',
+            'io.dropwizard.modules:dropwizard-java8:0.8.0-1'
+    )
+    testCompile(
+            'junit:junit:4.11',
+            'io.dropwizard:dropwizard-testing:0.8.1',
+            'org.skyscreamer:jsonassert:1.2.3'
+    )
+}
+
+configurations {
+    compile.exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+}
+
+mainClassName = "com.newsweaver.demo.colorservice.ColorService"
+
+defaultTasks 'clean', 'build'
+
+task dockerBuild(type: Exec) {
+    dependsOn distZip
+    description 'Builds docker image'
+    executable 'docker'
+    args 'build', '-t=color-service', '.'
+}

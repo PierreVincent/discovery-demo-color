@@ -1,0 +1,16 @@
+# Mac
+.DS_Store
+
+# IntelliJ
+.idea
+*.iml
+
+# build
+build
+
+# node
+node_modules
+bower_components
+npm-debug.log
+
+

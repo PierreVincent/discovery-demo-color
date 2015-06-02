@@ -1,0 +1,20 @@
+{
+  "name": "demo-color-ui",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "^1.12.3",
+    "errorhandler": "^1.3.5",
+    "express": "^4.12.3",
+    "express-promise": "^0.4.0",
+    "jade": "^1.9.2",
+    "method-override": "^2.3.2",
+    "multer": "^0.1.8",
+    "node-rest-client": "^1.5.1",
+    "q": "^1.3.0",
+    "serve-static": "^1.9.2"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}

@@ -1,0 +1,19 @@
+doctype html
+html(ng-app="demo.color")
+    head
+        meta(charset='utf8')
+        base(href='/')
+        title Smartstack Discovery - Color Demo
+        link(rel='stylesheet', href='/css/app.css')
+        link(rel='stylesheet', href='/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/css/bootstrap-theme.min.css')
+        script(src='js/lib/angular.min.js')
+        script(src='js/app.js')
+    body
+        div.container
+            div.page-header
+                h1 Smartstack Discovery - Color Demo
+            div(ng-controller='ColorController as colorController')
+                div.colorContainer(style='background-color: #{{ colorController.color.hex }} ')
+                    div.colorName {{ colorController.color.name }}
+

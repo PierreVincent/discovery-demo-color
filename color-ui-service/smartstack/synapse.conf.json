@@ -1,0 +1,32 @@
+{
+  "services": {
+    "color_service": {
+      "discovery": {
+        "method": "zookeeper",
+        "path": "/nerve/services/color_service",
+        "hosts": ["$ZK_HOSTS"]
+      },
+      "haproxy": {
+        "port": 8000,
+        "server_options": "check inter 1s rise 1 fall 1"
+      }
+    }
+  },
+  "haproxy": {
+    "reload_command": "service haproxy reload",
+    "config_file_path": "/etc/haproxy/haproxy.cfg",
+    "do_writes": true,
+    "do_reloads": true,
+    "global": [
+      "chroot /var/lib/haproxy",
+      "user haproxy",
+      "group haproxy",
+      "daemon"
+    ],
+    "defaults": [
+      "contimeout 5000",
+      "clitimeout 50000",
+      "srvtimeout 50000"
+    ]
+  }
+}
