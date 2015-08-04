@@ -1,6 +1,8 @@
 # Service Discovery Demo with Smartstack
 
-This demo is an example of how to use Smartstack in Docker containers to enable Service Discovery between microservices.
+This is an example of how to use Smartstack in Docker containers to enable Service Discovery between microservices.
+
+This demo was part of the [Microservices, Docker and Service Discovery](http://www.slideshare.net/PierreVincent3/microservices-docker-service-discovery-with-smartstack-english-version) talk at the Docker Rennes meetup in May 2015.
 
 ## Requirements
 
