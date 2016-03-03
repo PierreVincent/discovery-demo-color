@@ -32,13 +32,14 @@ Smartstack relied on Zookeeper as a key-value store to keep track of all the dis
 You can start use your own Zookeeper, or simply start it in container (and expose it to the host on port 2181):
 
 ```
-docker run -d -p 2181:2181 jplock/zookeeper
+CID=$(docker run -d -p 2181:2181 jplock/zookeeper)
+docker inspect $CID
 ```
 
 ### Start the Color UI Service
 
 ```
-docker run -d -e ZK_HOSTS=192.168.59.103:2181 -p 80:80 pierrevincent/discovery-demo-color-ui-service
+docker run -d -e ZK_HOSTS=<ZK_IPADDRESS>:2181 -p 80:80 pierrevincent/discovery-demo-color-ui-service
 ```
 
 You should then be able to access the Color UI on http://192.168.59.103. The page should display that there is no color available, since there is no Color Service available yet.
@@ -48,7 +49,7 @@ Note: 192.168.59.103 is the default IP for the Docker Host if you are using boot
 ### Start the Color Service
 
 ```
-docker run -d -e ZK_HOSTS=192.168.59.103:2181 pierrevincent/discovery-demo-color-service
+docker run -d -e ZK_HOSTS=<ZK_IPADDRESS>:2181 pierrevincent/discovery-demo-color-service
 ```
 
 You should then start seeing a color appearing on the Color UI in your browser on http://192.168.59.103
