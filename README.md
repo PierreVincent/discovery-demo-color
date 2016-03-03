@@ -41,7 +41,7 @@ docker run -d --name=zookeeper -p 2181:2181 jplock/zookeeper
 docker run -d -e ZK_HOSTS=<ZK_HOST>:2181 -p 80:80 pierrevincent/discovery-demo-color-ui-service
 ```
 
-Replace <ZH_HOST> with your Docker Host IP. If you're using docker-machine on MacOS it's likely to be 192.168.99.100. If you're on Linux, then simply use 127.0.0.1. You can also find the IP Address of the Zookeeper container by inspecting the container directly with ```docker inspect --format '{{ .NetworkSettings.IPAddress }}' zookeeper```.
+Replace ```<ZH_HOST>``` with your Docker Host IP. If you're using docker-machine on MacOS it's likely to be 192.168.99.100. If you're on Linux, then simply use 127.0.0.1. You can also find the IP Address of the Zookeeper container by inspecting the container directly with ```docker inspect --format '{{ .NetworkSettings.IPAddress }}' zookeeper```.
 
 You should then be able to access the Color UI on http://192.168.99.100 (or http://127.0.0.1 on Linux). The page should display that there is no color available, since there is no Color Service available yet.
 
